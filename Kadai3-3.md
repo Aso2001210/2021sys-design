@@ -1,3 +1,4 @@
+```uml
 @startuml
 start
 if (今朝はご飯だった) then (yes)
@@ -9,3 +10,4 @@ else (no)
 endif
 stop
 @enduml
+```

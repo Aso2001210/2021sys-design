@@ -1,3 +1,4 @@
+```uml
 @startuml
 start
 :起きる;
@@ -10,3 +11,4 @@ else (no)
 endif
 stop
 @enduml
+```

@@ -4,9 +4,9 @@ start
 :起きる;
 :朝食を食べる;
 :歯を磨く;
-if(眠い?) then (yes)
+if(眠い?) then (はい)
   :二度寝する;
-else (no)
+else (いいえ)
   :着替える;
 endif
 stop

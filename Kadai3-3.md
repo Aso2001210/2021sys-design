@@ -1,11 +1,11 @@
 ```uml
 @startuml
 start
-if (今朝はご飯だった) then (yes)
+if (今朝はご飯だった) then (Yes)
   :お昼はパンにしよう;
-elseif (今朝はパンだった) then (yes)
+elseif (今朝はパンだった) then (Yes)
   :お昼はご飯にしよう;
-else (no)
+else (No)
   :お昼は豪勢にしよう;
 endif
 stop

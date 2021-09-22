@@ -60,12 +60,17 @@ package "ECサイト" as target_system {
         reg_date
     }
     
-
+    entity "カテゴリマスタ" as category <m_category> <<M,MASTER_MARK_COLOR>> {
+        + category_id [PK]
+        --
+        name
+        reg_date
+    }
   
   customer       |o-ri-o{     order
 order          ||-ri-|{     order_detail
 order_detail    }-do-||     items
-items          }o-le-||　　　
+items          }o-le-||     category
 
 
 @enduml

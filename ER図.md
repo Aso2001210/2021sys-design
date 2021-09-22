@@ -74,4 +74,5 @@ order_detail    }-do-||     items
 items          }o-le-||     category
 
 
-```@enduml
+@enduml
+```

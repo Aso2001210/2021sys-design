@@ -69,6 +69,7 @@ package "ECサイト" as target_system {
   user       |o-ri-o{     cart
 cart          ||-ri-|{     history
 history    }-do-||     merchandise
+merchandise          }o-le-||     category
 
 @enduml
 ```

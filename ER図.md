@@ -20,12 +20,12 @@ package "ECサイト" as target_system {
      '/
 
     entity "ユーザーテーブル" as user <m_user> <<M.MASTER_MARK_COLOR>> {
-    + user_number [PK]
-    --
-    user_id
-    user_pass
-    user_name
-    user_address
+        + user_number [PK]
+        --
+        user_id
+        user_pass
+        user_name
+        user_address
     }
     
     entity "カートテーブル" as cart <cart> <<T,TRANSACTION_MARK_COLOR>> {

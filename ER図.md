@@ -31,12 +31,13 @@ package "ECサイト" as target_system {
         reg_date
     }
     
-    entity "購入テーブル" as order <order> <<T,TRANSACTION_MARK_COLOR>> {
-        + order_id [PK]
+    entity "カートテーブル" as order <order> <<T,TRANSACTION_MARK_COLOR>> {
+        + cart_user_number[PK]
+        + cart_count[PK]
         --
-        # customer_code [FK]
-        purchase_date
-        total_price
+        # cart_genre_id [FK]
+        # cart_merchandise_id [FK]
+        cart_quantity
     }
     
     entity "履歴テーブル" as order_detail  <order_detail> <<T,TRANSACTION_MARK_COLOR>> {

@@ -19,16 +19,13 @@ package "ECサイト" as target_system {
       １文字なら "主" とか "従" まど日本語でも記載可能
      '/
 
-    entity "顧客マスタ" as customer <m_customers> <<M,MASTER_MARK_COLOR>> {
-        + customer_code [PK]
-        --
-        pass
-        name
-        address
-        tel
-        mail
-        del_flag
-        reg_date
+    entity "ユーザーテーブル" as user <user> <<M.MASTER_MARK_COLOR>> {
+    + user_number [PK]
+    --
+    user_id
+    user_pass
+    user_name
+    user_address
     }
     
     entity "カートテーブル" as cart <cart> <<T,TRANSACTION_MARK_COLOR>> {
@@ -50,16 +47,15 @@ package "ECサイト" as target_system {
         histoty_day
     }
     
-    entity "商品マスタ" as items <m_items> <<M,MASTER_MARK_COLOR>> {
-        + item_code [PK]
+    entity "商品テーブル" as merchandise <merchandise> <<M.MASTER_MARK_COLOR>> {
+        + genre_id [PK]
+        + merchandise_id [PK]
         --
-        item_name
-        price
-        # category_id [FK]
-        image
-        detail
-        del_flag
-        reg_date
+        genre_name
+        merchandise_name
+        int
+        merchandise_detail
+        sales
     }
     
      entity "カテゴリマスタ" as category <m_category> <<M,MASTER_MARK_COLOR>> {
@@ -70,10 +66,10 @@ package "ECサイト" as target_system {
     }
   }
   
-  customer       |o-ri-o{     cart
+  user       |o-ri-o{     cart
 cart          ||-ri-|{     history
-history    }-do-||     items
-items          }o-le-||     category
+history    }-do-||     merchandise
+merchandise          }o-le-||     category
 
 
 @enduml

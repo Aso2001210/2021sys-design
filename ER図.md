@@ -31,7 +31,7 @@ package "ECサイト" as target_system {
         reg_date
     }
     
-    entity "カートテーブル" as order <order> <<T,TRANSACTION_MARK_COLOR>> {
+    entity "カートテーブル" as cart <cart> <<T,TRANSACTION_MARK_COLOR>> {
         + cart_user_number[PK]
         + cart_count[PK]
         --
@@ -40,7 +40,7 @@ package "ECサイト" as target_system {
         cart_quantity
     }
     
-    entity "履歴テーブル" as order_detail  <order_detail> <<T,TRANSACTION_MARK_COLOR>> {
+    entity "履歴テーブル" as history  <history> <<T,TRANSACTION_MARK_COLOR>> {
         + history_user_number[PK]
         + history_count[PK]
         --
@@ -70,9 +70,9 @@ package "ECサイト" as target_system {
     }
   }
   
-  customer       |o-ri-o{     order
-order          ||-ri-|{     order_detail
-order_detail    }-do-||     items
+  customer       |o-ri-o{     cart
+cart          ||-ri-|{     history
+history    }-do-||     items
 items          }o-le-||     category
 
 

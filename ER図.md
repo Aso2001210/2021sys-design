@@ -28,13 +28,15 @@ package "ECサイト" as target_system {
         user_address
     }
     
-    entity "カートテーブル" as cart <cart> <<T,TRANSACTION_MARK_COLOR>> {
-        + cart_user_number[PK]
-        + cart_count[PK]
+    entity "商品テーブル" as merchandise <merchandise> <<M,MASTER_MARK_COLOR>> {
+        + genre_id [PK]
+        + merchandise_id [PK]
         --
-        # cart_genre_id [FK]
-        # cart_merchandise_id [FK]
-        cart_quantity
+        genre_name
+        merchandise_name
+        int
+        merchandise_detail
+        sales
     }
     
     entity "履歴テーブル" as history  <history> <<T,TRANSACTION_MARK_COLOR>> {
@@ -47,15 +49,13 @@ package "ECサイト" as target_system {
         histoty_day
     }
     
-    entity "商品テーブル" as merchandise <merchandise> <<M,MASTER_MARK_COLOR>> {
-        + genre_id [PK]
-        + merchandise_id [PK]
+    entity "カートテーブル" as cart <cart> <<T,TRANSACTION_MARK_COLOR>> {
+        + cart_user_number[PK]
+        + cart_count[PK]
         --
-        genre_name
-        merchandise_name
-        int
-        merchandise_detail
-        sales
+        # cart_genre_id [FK]
+        # cart_merchandise_id [FK]
+        cart_quantity
     }
     
      entity "カテゴリマスタ" as category <m_category> <<M,MASTER_MARK_COLOR>> {
@@ -66,10 +66,10 @@ package "ECサイト" as target_system {
     }
   }
   
-  user       |o-ri-o{     cart
-cart          ||-ri-|{     history
-history    }-do-||     merchandise
-merchandise          }o-le-||     category
+  user       |o-ri-o{     merchandise
+merchandise          ||-ri-|{     history
+history    }-do-||     cart
+cart          }o-le-||     category
 
 @enduml
 ```

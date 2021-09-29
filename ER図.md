@@ -66,10 +66,10 @@ package "ECサイト" as target_system {
     }
   }
   
-  user            cart
-cart               history
-history         merchandise
-merchandise             category
+    user       |o-ri-o{     cart
+cart          ||-ri-|{     history
+history    }-do-||     merchandise
+merchandise          }o-le-||   category
 
 @enduml
 ```

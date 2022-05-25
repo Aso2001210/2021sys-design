@@ -62,7 +62,7 @@ package "ECサイト" as target_system {
   }
   
     user       |o-ri-o{     cart
-cart          ||-ri-|{     history
+cart          ||-do-|{     history
 history    }-do-||     merchandise
 
 
